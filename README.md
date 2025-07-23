@@ -31,7 +31,7 @@ The simulator models and compares the following **stateless service disciplines*
 
 ## 🧪 Methodology
 
-- **Language**: C++
+- **Language**: Python
 - **Simulation Goals**:
   - Compute metrics like pooling size, sojourn time, load, unfairness
   - Analyze both **perfect** and **imperfect** OFDMA behavior
