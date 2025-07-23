@@ -70,15 +70,16 @@ python TwoStation.py
 ```
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
-Sushant Kumar
-Tanay Goenka
-Tanmay Mittal
-Priyanshu Pratya
-Course: CS348 – Performances Modelling Of Communication And Computer Systems 
-Institution: IIT Guwahati  
-Year: 2025
+- **Sushant Kumar**  
+- **Tanay Goenka**  
+- **Tanmay Mittal**  
+- **Priyanshu Pratya**  
+
+**Course**: CS348 – Performance Modelling of Communication and Computer Systems  
+**Institution**: Indian Institute of Technology Guwahati  
+**Year**: 2025
 
 
 
