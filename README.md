@@ -54,6 +54,7 @@ The simulator models and compares the following **stateless service disciplines*
 
 ---
 
+
 ## 🔧 Setup & Execution
 
 ### 🛠 Requirements
@@ -67,6 +68,8 @@ The simulator models and compares the following **stateless service disciplines*
 ### ⚙️ Build
 ```bash
 g++ -std=c++17 -O2 -o simulator main.cpp
+```
+---
 
 ## 👨‍💻 Author
 
@@ -77,3 +80,6 @@ Priyanshu Pratya
 Course: CS348 – Performances Modelling Of Communication And Computer Systems 
 Institution: IIT Guwahati  
 Year: 2025
+
+
+
