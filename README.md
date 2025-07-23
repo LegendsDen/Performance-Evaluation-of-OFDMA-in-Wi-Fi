@@ -58,7 +58,6 @@ The simulator models and compares the following **stateless service disciplines*
 ## 🔧 Setup & Execution
 
 ### 🛠 Requirements
-- C++17 compiler (e.g., `g++`, `clang++`)
 - Python 3.x (optional, for visualization)
 - Python packages:
   - `numpy`
@@ -67,7 +66,7 @@ The simulator models and compares the following **stateless service disciplines*
 
 ### ⚙️ Build
 ```bash
-g++ -std=c++17 -O2 -o simulator TwoStation.cpp
+python TwoStation.py
 ```
 ---
 
