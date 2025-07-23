@@ -67,7 +67,7 @@ The simulator models and compares the following **stateless service disciplines*
 
 ### ⚙️ Build
 ```bash
-g++ -std=c++17 -O2 -o simulator main.cpp
+g++ -std=c++17 -O2 -o simulator TwoStation.cpp
 ```
 ---
 
