@@ -7,41 +7,63 @@ We focus specifically on **mean pooling size** (number of frames per jumbo frame
 - Increasing arrival rate to a fixed destination (Two-station scenario)
 - Increasing number of destinations (Multi-destination scenario)
 
-## 📌 Objectives
+## 🎯 Objectives
 
-- Analyze and simulate the **mean pooling size** under different service disciplines.
-- Understand how system saturation impacts the ability to pool frames efficiently.
-- Visualize the scalability of pooling mechanisms with arrival load and destination count.
+- Simulate and evaluate **mean pooling size** across different Wi-Fi traffic scenarios.
+- Analyze trade-offs between **throughput**, **fairness**, and **system capacity**.
+- Study how scheduling disciplines scale with:
+  - Increasing **arrival rate** to a destination (2-station scenario)
+  - Increasing **number of destinations** (multi-destination scenario)
+
+---
+
+## ⚙️ Implemented Disciplines
+
+The simulator models and compares the following **stateless service disciplines**:
+
+| Discipline         | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| **FIFO Pooling**   | Pure FIFO; aggregates same-destination frames or uses OFDMA for different ones. |
+| **Max FIFO Pooling** | Starts from the FIFO head; selects the combination that maximizes pooling.    |
+| **Max Pooling**     | Greedy approach that selects frames (ignoring arrival order) to maximize jumbo frame size. |
+
+---
 
 ## 🧪 Methodology
 
-- Developed a **C++ simulator** that models Wi-Fi packet scheduling with different pooling disciplines.
-- Measured **mean pooling size** by aggregating frames under varying:
-  - Arrival rates (\( \lambda_2 \)) for a two-destination setup
-  - Number of destinations (from 2 to 40) for scalability analysis
-- Generated plots to visualize system behavior and performance bottlenecks.
+- **Language**: C++
+- **Simulation Goals**:
+  - Compute metrics like pooling size, sojourn time, load, unfairness
+  - Analyze both **perfect** and **imperfect** OFDMA behavior
+- **Scenarios Simulated**:
+  - **Two-station**: One fixed arrival rate, one increasing
+  - **Multi-destination**: Equal rate, but varying number of destinations
 
 ---
 
-## 📊 Key Results
+## 📈 Sample Results
 
-### 📌 Mean Pooling Size vs Arrival Rate (Two-Station Scenario)
-- Pooling size increases **exponentially** as arrival rate increases and system approaches saturation.
-- **Max Pooling** performs slightly better than **Max FIFO** and **FIFO Pooling** near saturation.
+### 📌 Mean Pooling Size vs Arrival Rate (Two-Station)
+- Pooling size increases **non-linearly** as the system approaches saturation.
+- **Max Pooling** shows highest efficiency.
 
-### 📌 Mean Pooling Size vs Number of Destinations
-- All disciplines show increased pooling size as destinations increase.
-- **FIFO Pooling** hits its limit at 24 destinations.
-- **Max FIFO Pooling** and **Max Pooling** continue scaling beyond that, with **Max FIFO Pooling** reaching the **highest pooling size** (~41 frames).
+### 📌 Mean Pooling Size vs Destination Count (Multi-Destination)
+- All disciplines improve pooling with more destinations.
+- **FIFO Pooling** saturates ~24 destinations.
+- **Max FIFO Pooling** scales better and offers a good fairness-capacity trade-off.
 
 ---
 
-## 🔧 Setup and Execution
+## 🔧 Setup & Execution
 
-### Requirements
-- C++ compiler (g++ or clang++)
-- Python 3.x (for plotting, optional)
-- Libraries (optional):
-  - `matplotlib`
+### 🛠 Requirements
+- C++17 compiler (e.g., `g++`, `clang++`)
+- Python 3.x (optional, for visualization)
+- Python packages:
   - `numpy`
   - `pandas`
+  - `matplotlib`
+
+### ⚙️ Build
+```bash
+g++ -std=c++17 -O2 -o simulator main.cpp
